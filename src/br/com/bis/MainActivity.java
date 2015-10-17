@@ -5,14 +5,15 @@ import org.cocos2d.nodes.CCDirector;
 import org.cocos2d.opengl.CCGLSurfaceView;
 
 import br.com.bis.meteoros.scenes.TitleScreen;
-import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+
+
+
+
 
 public class MainActivity extends Activity {
 
@@ -24,7 +25,7 @@ public class MainActivity extends Activity {
 		setRequestedOrientation(
 				ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 				requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(
+			getWindow().setFlags(
 				WindowManager.LayoutParams.FLAG_FULLSCREEN,
 				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		
@@ -34,7 +35,7 @@ public class MainActivity extends Activity {
 		CCDirector.sharedDirector().attachInView(glSurfaceView);
 		
 		//configura CCDirector
-		CCDirector.sharedDirector().seScreenSize(320, 480);
+		CCDirector.sharedDirector().setScreenSize(320, 480);
 		
 		//abre a tela principal
 		CCScene scene = new TitleScreen().scene();

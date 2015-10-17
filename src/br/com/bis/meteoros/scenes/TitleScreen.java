@@ -7,6 +7,7 @@ import org.cocos2d.types.CGPoint;
 
 import static br.com.bis.meteoros.scenes.DeviceSettings.screenHeight;
 import static br.com.bis.meteoros.scenes.DeviceSettings.screenWidth;
+import  static br.com.bis.meteoros.scenes.DeviceSettings.screenResolution;
 
 public class TitleScreen extends CCLayer{
 	
@@ -23,10 +24,10 @@ public class TitleScreen extends CCLayer{
 		this.background = new ScreenBackground(Assets.BACKGROUND);
 		this.background.setPosition(
 				screenResolution(CGPoint.ccp(
-						CCDirector.sharedDirector().winSize().width / 2.0f,
-						CCDirector.sharedDirector().winSize().height / 2.0f
+						screenWidth() / 2.0f,
+						screenHeight() / 2.0f
 						)));
-		this.addChild(background);
+		this.addChild(this.background);
 	}
 
 }
